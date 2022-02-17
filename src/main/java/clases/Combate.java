@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.Random;
+
 public class Combate {
 	private short turno;
 	private Personaje participante1;
@@ -44,6 +46,15 @@ public class Combate {
 
 	public void setGanador(Personaje ganador) {
 		this.ganador = ganador;
+	}
+	
+	public void combatir() {
+		Random r=new Random();
+		Personaje[] luchadores= {this.participante1,this.participante2};
+		byte leTocaA=(byte)r.nextInt(luchadores.length);
+		byte puntosAtaque=luchadores[leTocaA].atacar();
+		luchadores[(1+leTocaA)%2].recibirAtaque(puntosAtaque);
+		
 	}
 	
 	

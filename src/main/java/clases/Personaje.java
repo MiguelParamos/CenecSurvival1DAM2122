@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.Random;
+
 public class Personaje {
 	private String nombre;
 	private byte vida;
@@ -79,6 +81,30 @@ public class Personaje {
 				}
 		
 		return ret;
+	}
+	
+	public byte atacar() {
+		Random r=new Random();
+		byte puntosDaño=(byte)r.nextInt(this.getArma().getPuntosAtaque());
+		System.out.println(this.nombre+" ataca con su "+
+		this.getArma().getNombre()+" y hace "+puntosDaño+" puntos de daño");
+		return puntosDaño;
+	}
+	
+	public void recibirAtaque(byte puntosAtaqueRecibidos) {
+		Random r=new Random();
+		byte defensaUsada=
+				(byte)r.nextInt(this.getProteccion().getPuntosDefensa());
+		System.out.print(this.nombre+" recibe un ataque de "
+				+puntosAtaqueRecibidos+" puntos, usa su "+this.proteccion.getNombre()+
+				" para defenserse, y ");
+		if(puntosAtaqueRecibidos>defensaUsada) {
+			System.out.println("recibe "+(puntosAtaqueRecibidos-defensaUsada)+
+					" puntos de daño");
+			this.vida-=puntosAtaqueRecibidos-defensaUsada;
+		}else {
+			System.out.println("no recibe daño");
+		}
 	}
 	
 }
