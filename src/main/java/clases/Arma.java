@@ -31,7 +31,7 @@ public class Arma {
 	}
 	
 	public String toString() {
-		return this.nombre+"(ataque: "+this.puntosAtaque+")";
+		return this.nombre+"(Ataque: "+this.puntosAtaque+")";
 	}
 	
 }
