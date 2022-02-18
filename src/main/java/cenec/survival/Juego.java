@@ -18,17 +18,42 @@ public class Juego {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		armasPosibles.add(new Arma("Impuestos",(byte)20));
+		
+		
 		ArrayList<Proteccion> proteccionesPosibles=new ArrayList<Proteccion>();
 		proteccionesPosibles.add(new Proteccion("Carpincho",(byte)20)); 
 		proteccionesPosibles.add(new Proteccion("Pato de Goma",(byte)5));
 		proteccionesPosibles.add(new Proteccion("Careta de Pedro Sanchez",(byte)20));
 		
 		
+		
+		
+		
+		proteccionesPosibles.add(new Proteccion("Hacienda",(byte)20));
+		
+		
+		
+		
+		
 		Random r=new Random();
 		Personaje juanmi=new Personaje("Juanmi",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje eric=new Personaje("Eric",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje miguel=new Personaje("Miguel Páramos",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
-		Personaje[] personajesPosibles= {juanmi,eric,miguel};
+		
+		
+		
+		
+		Personaje juanjo=new Personaje("Juanjo",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		
+		
+		Personaje[] personajesPosibles= {juanmi,eric,miguel,juanjo};
 		
 
 		
