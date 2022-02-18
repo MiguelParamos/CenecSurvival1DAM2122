@@ -46,7 +46,7 @@ public class Juego {
 		
 		Combate pelea1=new Combate(juanmi,eric);
 		pelea1.combatir();
-		
+
 	}
 
 }
