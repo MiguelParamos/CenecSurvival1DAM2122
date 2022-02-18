@@ -1,5 +1,8 @@
 package cenec.survival;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import clases.Arma;
 import clases.Combate;
 import clases.Personaje;
@@ -8,22 +11,30 @@ import clases.Proteccion;
 public class Juego {
 
 	public static void main(String[] args) {
-		Arma mataCarpinchos=new Arma("MataCarpinchos",(byte)5);
-		Proteccion carpincho=new Proteccion("Carpincho",(byte)20); 
-		Personaje juanmi=new Personaje("Juanmi",mataCarpinchos,carpincho);
-
-		Arma cucharaPalo=new Arma("Cuchara de Palo",(byte)20);
-		Proteccion patoDeGoma=new Proteccion("Pato de Goma",(byte)5);
-		Personaje eric=new Personaje("Eric",cucharaPalo,patoDeGoma);
+		ArrayList<Arma> armasPosibles=new ArrayList<Arma>();
+		armasPosibles.add(new Arma("MataCarpinchos",(byte)15));
+		armasPosibles.add(new Arma("Cuchara de Palo",(byte)20));
+		armasPosibles.add(new Arma("Botijo nuclear",(byte)17));
+		
+		
+		
+		ArrayList<Proteccion> proteccionesPosibles=new ArrayList<Proteccion>();
+		proteccionesPosibles.add(new Proteccion("Carpincho",(byte)20)); 
+		proteccionesPosibles.add(new Proteccion("Pato de Goma",(byte)5));
+		proteccionesPosibles.add(new Proteccion("Careta de Pedro Sanchez",(byte)20));
+		
+		
+		Random r=new Random();
+		Personaje juanmi=new Personaje("Juanmi",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje eric=new Personaje("Eric",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje miguel=new Personaje("Miguel Páramos",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje[] personajesPosibles= {juanmi,eric,miguel};
 		
 
 		
 		Combate pelea1=new Combate(juanmi,eric);
 		pelea1.combatir();
 		
-		System.out.println(juanmi);
-		System.out.println("\nVs\n\n");
-		System.out.println(eric);
 	}
 
 }
