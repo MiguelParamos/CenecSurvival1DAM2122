@@ -20,6 +20,7 @@ public class Juego {
 		armasPosibles.add(new Arma("Zapatilla voladora",(byte)20));
 		armasPosibles.add(new Arma("Alpargata",(byte)20));
 		armasPosibles.add(new Arma("teclado custom",(byte)13));
+		armasPosibles.add(new Arma("Machetón",(byte)15));
 		
 		
 		ArrayList<Proteccion> proteccionesPosibles = new ArrayList<Proteccion>();
@@ -31,6 +32,7 @@ public class Juego {
 		proteccionesPosibles.add(new Proteccion("Silla de plastico",(byte)5));
 		proteccionesPosibles.add(new Proteccion("Sustituto",(byte)10));
 		proteccionesPosibles.add(new Proteccion("Refrigeracion liquida",(byte)7));
+		proteccionesPosibles.add(new Proteccion("Ser furry",(byte)13));
 		
 		
 		Random r = new Random();
@@ -46,11 +48,12 @@ public class Juego {
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje alexis=new Personaje("Alexis",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje juan=new Personaje("Juan",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje agustin=new Personaje("AgustÃ­n",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		
 		Personaje pepeB = new Personaje("Pepe Botella", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		
-		Personaje[] personajesPosibles = { juanmi, eric, miguel,aleB,joaquin,alexis,juan, pepeB };
+		Personaje[] personajesPosibles = { juanmi, eric, miguel,aleB,joaquin,alexis,juan, pepeB,agustin };
 		
 		
 		
