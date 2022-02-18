@@ -37,7 +37,7 @@ public class Juego {
 		Personaje agustin = new Personaje("Agustín", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 
-		Personaje[] personajesPosibles = { juanmi, eric, miguel };
+		Personaje[] personajesPosibles = { juanmi, eric, miguel, agustin };
 
 		Combate pelea1 = new Combate(juanmi, eric);
 		pelea1.combatir();
