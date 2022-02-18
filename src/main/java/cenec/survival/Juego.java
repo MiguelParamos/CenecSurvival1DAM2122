@@ -40,7 +40,7 @@ public class Juego {
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje eric = new Personaje("Eric", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
-		Personaje miguel = new Personaje("Miguel Páramos", armasPosibles.get(r.nextInt(armasPosibles.size())),
+		Personaje miguel = new Personaje("Miguel Pï¿½ramos", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje aleB = new Personaje("Ale Barrionuevo", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
