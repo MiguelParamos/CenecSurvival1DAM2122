@@ -16,7 +16,13 @@ public class Juego {
 		armasPosibles.add(new Arma("Cuchara de Palo",(byte)20));
 		armasPosibles.add(new Arma("Botijo nuclear",(byte)17));
 		armasPosibles.add(new Arma("Zapatilla voladora",(byte)20));
+<<<<<<< Updated upstream
 		
+=======
+		armasPosibles.add(new Arma("Alpargata",(byte)20));
+		armasPosibles.add(new Arma("teclado custom",(byte)13));
+		armasPosibles.add(new Arma("Ray Gun m2",(byte)20))
+>>>>>>> Stashed changes
 		
 		
 		
@@ -37,14 +43,17 @@ public class Juego {
 
 		proteccionesPosibles.add(new Proteccion("Sustituto",(byte)10));
 		proteccionesPosibles.add(new Proteccion("Refrigeracion liquida",(byte)7));
+		proteccionesPosibles.add(new Proteccion("Jose Carlos",(byte)12));
 		
 		
 		Random r = new Random();
 		Personaje juanmi = new Personaje("Juanmi", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje Antonio = new Personaje("Juanmi", armasPosibles.get(r.nextInt(armasPosibles.size())),
+				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje eric = new Personaje("Eric", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
-		Personaje miguel = new Personaje("Miguel Páramos", armasPosibles.get(r.nextInt(armasPosibles.size())),
+		Personaje miguel = new Personaje("Miguel Pï¿½ramos", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje aleB = new Personaje("Ale Barrionuevo", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
@@ -52,12 +61,17 @@ public class Juego {
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje alexis=new Personaje("Alexis",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje juan=new Personaje("Juan",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+<<<<<<< Updated upstream
 		
 		Personaje pepeB = new Personaje("Pepe Botella", armasPosibles.get(r.nextInt(armasPosibles.size())),
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		
 		Personaje[] personajesPosibles = { juanmi, eric, miguel,aleB,joaquin,alexis,juan, pepeB };
 
+=======
+
+		Personaje[] personajesPosibles = { juanmi, eric, miguel,aleB,joaquin,alexis,juan };
+>>>>>>> Stashed changes
 		
 		
 		
