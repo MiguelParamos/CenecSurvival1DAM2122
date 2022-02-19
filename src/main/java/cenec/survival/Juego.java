@@ -21,7 +21,7 @@ public class Juego {
 		armasPosibles.add(new Arma("Zapatilla voladora",(byte)20));
 		armasPosibles.add(new Arma("Alpargata",(byte)20));
 		armasPosibles.add(new Arma("teclado custom",(byte)13));
-		armasPosibles.add(new Arma("Machetï¿½n",(byte)15));
+		armasPosibles.add(new Arma("Machetón",(byte)15));
 		armasPosibles.add(new Arma("Silla de Echenique",(byte)13));
 		armasPosibles.add(new Arma("Ray Gun m2",(byte)20));
 		armasPosibles.add(new Arma("Impuestos",(byte)20));
@@ -36,7 +36,8 @@ public class Juego {
 		armasPosibles.add(new Arma("Martillo de TORBE",(byte)14));
 		armasPosibles.add(new Arma("palo radiactivo", (byte) 15));
 		armasPosibles.add(new Arma("Golem de Willyrex", (byte) 15));
-		armasPosibles.add(new Arma("MaldiciÃ³n Gitana", (byte) 17));
+		armasPosibles.add(new Arma("Maldición Gitana", (byte) 17));
+		armasPosibles.add(new Arma("El mensajero del mensajero", (byte) 20));
 		
 		ArrayList<Proteccion> proteccionesPosibles=new ArrayList<Proteccion>();
 		proteccionesPosibles.add(new Proteccion("Carpincho",(byte)20)); 
@@ -62,6 +63,7 @@ public class Juego {
 		proteccionesPosibles.add(new Proteccion("Seta gigante ", (byte) 20));
 		proteccionesPosibles.add(new Proteccion("Mayichi gitana ", (byte) 20));
 		proteccionesPosibles.add(new Proteccion("Ojo de Horus", (byte) 20));
+		proteccionesPosibles.add(new Proteccion("El apocolipsis", (byte) 20));
 		
 		Random r=new Random();
 		Personaje juanmi=new Personaje("Juanmi",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
@@ -95,8 +97,9 @@ public class Juego {
 		Personaje joseLui = new Personaje("Jose Luis", armasPosibles.get(r.nextInt(armasPosibles.size())),
 			    proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje david=new Personaje("David",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje skippy=new Personaje("Skippy",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		
-		Personaje[] personajesPosibles = {david,joseLui,alexL,abelR, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio };
+		Personaje[] personajesPosibles = {david,joseLui,alexL,abelR, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio,skippy };
 		
 		
 		Combate pelea1=new Combate(personajesPosibles[r.nextInt(personajesPosibles.length)],personajesPosibles[r.nextInt(personajesPosibles.length)]);
