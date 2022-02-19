@@ -92,7 +92,9 @@ public class Juego {
 			    proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje joseLui = new Personaje("Jose Luis", armasPosibles.get(r.nextInt(armasPosibles.size())),
 			    proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
-		Personaje[] personajesPosibles = {joseLui,alexL,abelR, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio };
+		Personaje david=new Personaje("David",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		
+		Personaje[] personajesPosibles = {david,joseLui,alexL,abelR, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio };
 		
 		
 		Combate pelea1=new Combate(personajesPosibles[r.nextInt(personajesPosibles.length)],personajesPosibles[r.nextInt(personajesPosibles.length)]);
