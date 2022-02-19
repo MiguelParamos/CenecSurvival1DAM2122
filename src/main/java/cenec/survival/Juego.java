@@ -36,6 +36,7 @@ public class Juego {
 		armasPosibles.add(new Arma("Martillo de TORBE",(byte)14));
 		armasPosibles.add(new Arma("palo radiactivo", (byte) 15));
 		armasPosibles.add(new Arma("Golem de Willyrex", (byte) 15));
+		armasPosibles.add(new Arma("Maldición Gitana", (byte) 17));
 		
 		ArrayList<Proteccion> proteccionesPosibles=new ArrayList<Proteccion>();
 		proteccionesPosibles.add(new Proteccion("Carpincho",(byte)20)); 
@@ -60,6 +61,7 @@ public class Juego {
 		proteccionesPosibles.add(new Proteccion("Caja de Donuts",(byte)15));
 		proteccionesPosibles.add(new Proteccion("Seta gigante ", (byte) 20));
 		proteccionesPosibles.add(new Proteccion("Mayichi gitana ", (byte) 20));
+		proteccionesPosibles.add(new Proteccion("Ojo de Horus", (byte) 20));
 		
 		Random r=new Random();
 		Personaje juanmi=new Personaje("Juanmi",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
