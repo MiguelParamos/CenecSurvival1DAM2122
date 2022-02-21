@@ -79,6 +79,7 @@ public class Juego {
 		Personaje joaquin = new Personaje("Joaquin Moreno", armasPosibles.get(r.nextInt(armasPosibles.size())), 
 				proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje alexis=new Personaje("Alexis",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
+		Personaje Alvaro=new Personaje("Alvaro",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje juan=new Personaje("Juan",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje agustin=new Personaje("Agustín",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje juanjo=new Personaje("Juanjo",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
@@ -102,7 +103,7 @@ public class Juego {
 		Personaje skippy=new Personaje("Skippy",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		Personaje marcos=new Personaje("Marcos",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
 		
-		Personaje[] personajesPosibles = {marcos,david,joseLui,alexL,abelR, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio,skippy };
+		Personaje[] personajesPosibles = {marcos,david,joseLui,alexL,abelR, Alvaro, aleAsencio,cristian,gonzalo,guille,antonio,juanjo, juanmi, eric,leti, miguel,aleB,joaquin,alexis,juan, jero, pepeB,agustin, ignacio,skippy };
 		
 		
 		Combate pelea1=new Combate(personajesPosibles[r.nextInt(personajesPosibles.length)],personajesPosibles[r.nextInt(personajesPosibles.length)]);
