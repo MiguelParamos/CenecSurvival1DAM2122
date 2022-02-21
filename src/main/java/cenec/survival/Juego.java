@@ -21,7 +21,7 @@ public class Juego {
 		armasPosibles.add(new Arma("Zapatilla voladora",(byte)20));
 		armasPosibles.add(new Arma("Alpargata",(byte)20));
 		armasPosibles.add(new Arma("teclado custom",(byte)13));
-		armasPosibles.add(new Arma("Machetón",(byte)15));
+		armasPosibles.add(new Arma("MachetÃ³n",(byte)15));
 		armasPosibles.add(new Arma("Silla de Echenique",(byte)13));
 		armasPosibles.add(new Arma("Ray Gun m2",(byte)20));
 		armasPosibles.add(new Arma("Impuestos",(byte)20));
@@ -36,7 +36,7 @@ public class Juego {
 		armasPosibles.add(new Arma("Martillo de TORBE",(byte)14));
 		armasPosibles.add(new Arma("palo radiactivo", (byte) 15));
 		armasPosibles.add(new Arma("Golem de Willyrex", (byte) 15));
-		armasPosibles.add(new Arma("Maldición Gitana", (byte) 17));
+		armasPosibles.add(new Arma("MaldiciÃ³n Gitana", (byte) 17));
 		armasPosibles.add(new Arma("El mensajero del mensajero", (byte) 20));
 		
 		ArrayList<Proteccion> proteccionesPosibles=new ArrayList<Proteccion>();
