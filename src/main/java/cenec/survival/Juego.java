@@ -64,6 +64,7 @@ public class Juego {
 		proteccionesPosibles.add(new Proteccion("Mayichi gitana ", (byte) 20));
 		proteccionesPosibles.add(new Proteccion("Ojo de Horus", (byte) 20));
 		proteccionesPosibles.add(new Proteccion("El apocolipsis", (byte) 20));
+		proteccionesPosibles.add(new Proteccion("Litro vacia", (byte) 17));
 		
 		Random r=new Random();
 		Personaje juanmi=new Personaje("Juanmi",armasPosibles.get(r.nextInt(armasPosibles.size())),proteccionesPosibles.get(r.nextInt(proteccionesPosibles.size())));
