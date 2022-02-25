@@ -15,11 +15,11 @@ public class Arma extends Objeto{
 	private byte puntosAtaque;
 
 	/**
-	 * Constructor de la clase arma
+	 * Constructor de la clase arma recibe el ataque
+	 * De vuelve el ataque de arma
 	 */
-	public Arma() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Arma(byte pA) {
+		this.setPuntosAtaque(pA);
 	}
 
 	/**
