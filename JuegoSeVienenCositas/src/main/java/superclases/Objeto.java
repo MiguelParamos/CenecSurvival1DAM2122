@@ -8,6 +8,9 @@ import superclases.EntidadConMonedas;
  */
 public class Objeto extends EntidadConMonedas{
 
+/**
+ * Representa un objeto estiende de EntidadConMonedas
+ */
 
 	
 
