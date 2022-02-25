@@ -16,4 +16,45 @@ public class Lugar extends EntidadConMonedas {
 	private Tienda tienda;
 /** representa una descripcion del lugar **/
 	private String descripcion;
+	
+public Lugar(Pocion pocion, Enemigo enemigo, Tienda tienda, String descripcion) {
+	super();
+	this.pocion = pocion;
+	this.enemigo = enemigo;
+	this.tienda = tienda;
+	this.descripcion = descripcion;
+}
+
+public Pocion getPocion() {
+	return pocion;
+}
+
+public void setPocion(Pocion pocion) {
+	this.pocion = pocion;
+}
+
+public Enemigo getEnemigo() {
+	return enemigo;
+}
+
+public void setEnemigo(Enemigo enemigo) {
+	this.enemigo = enemigo;
+}
+
+public Tienda getTienda() {
+	return tienda;
+}
+
+public void setTienda(Tienda tienda) {
+	this.tienda = tienda;
+}
+
+public String getDescripcion() {
+	return descripcion;
+}
+
+public void setDescripcion(String descripcion) {
+	this.descripcion = descripcion;
+}
+
 }
