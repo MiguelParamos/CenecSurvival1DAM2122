@@ -1,11 +1,12 @@
 package clases;
 
+import superclases.EntidadConMonedas;
+
 /**
  * Representa el nombre del jugador, su vida, arma y proteccion
- * @author Cristian
- *
+ * @author Cristian Cocargeanu
  */
-public class Personaje {
+public class Personaje extends EntidadConMonedas {
 	/**
 	 * Representa los puntos de vida del personaje
 	 */
