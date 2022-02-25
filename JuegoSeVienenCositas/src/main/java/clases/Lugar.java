@@ -1,4 +1,7 @@
 package clases;
+
+import superclases.EntidadConMonedas;
+
 /**
  * Representa el lugar donde encontraremos una descripcion, enemigos, tiendas y pociones
  * @author erico
