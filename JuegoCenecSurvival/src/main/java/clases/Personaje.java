@@ -85,10 +85,10 @@ public class Personaje {
 	
 	public byte atacar() {
 		Random r=new Random();
-		byte puntosDaÃ±o=(byte)r.nextInt(this.getArma().getPuntosAtaque());
+		byte puntosDaño=(byte)r.nextInt(this.getArma().getPuntosAtaque());
 		System.out.println(this.nombre+" ("+this.vida+")"+" ataca con su "+
-		this.getArma().getNombre()+" y hace "+puntosDaÃ±o+" puntos de daï¿½o");
-		return puntosDaÃ±o;
+		this.getArma().getNombre()+" y hace "+puntosDaño+" puntos de daï¿½o");
+		return puntosDaño;
 	}
 	
 	public void recibirAtaque(byte puntosAtaqueRecibidos) {
