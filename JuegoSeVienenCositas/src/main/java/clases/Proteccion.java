@@ -1,12 +1,14 @@
 package clases;
 
+import superclases.Objeto;
+
 /**
- * Representa la protección de los jugadores y enemigos mediante puntos de defensa
- * @author Hugo Márquez
+ * Representa la protecciï¿½n de los jugadores y enemigos mediante puntos de defensa
+ * @author Hugo Mï¿½rquez
  *
  */
 
-public class Proteccion {
+public class Proteccion extends Objeto{
 	/** Representan los puntos de defensa de los personajes */
 	private byte puntosDefensa;
 }
