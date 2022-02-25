@@ -19,16 +19,12 @@ public class Personaje extends EntidadConMonedas {
 	 * Representa los puntos de proteccion de la defensa
 	 */
 	private Proteccion proteccion;
-	/**
-	 * Representa el nombre del personaje
-	 */
-	private String nombre;
-	public Personaje(String nombre, byte dinero, short vida, Arma arma, Proteccion proteccion, String nombre2) {
+	
+	public Personaje(String nombre, byte dinero, short vida, Arma arma, Proteccion proteccion) {
 		super(nombre, dinero);
 		this.vida = vida;
 		this.arma = arma;
 		this.proteccion = proteccion;
-		nombre = nombre2;
 	}
 	public short getVida() {
 		return vida;
