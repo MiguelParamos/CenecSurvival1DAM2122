@@ -13,14 +13,12 @@ public class Proteccion extends Objeto{
 	private byte puntosDefensa;
 
 
-	/**
-	 * Constructor de puntos de defensa
-	 * @param puntosDefensa
-	 */
-	public Proteccion(byte puntosDefensa) {
-		super();
+	
+public Proteccion(String nombre, byte dinero, byte puntosDefensa) {
+		super(nombre, dinero);
 		this.puntosDefensa = puntosDefensa;
 	}
+
 /**
  * getter de Puntos de defensa
  * @return puntos de defensa de la clase proteccion
