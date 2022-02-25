@@ -4,11 +4,14 @@ package clases;
  * @author Gonzalo de Troya
  * 
  */
-public class Jugador {
+public class Jugador extends Personaje{
 	/**
-	 * Representa la posicion de fila y de columna que tendran en el tablero.
+	 * Representa la posicion de fila  que tendran en el tablero.
 	 */
 	private byte posicionFila;
+	/**
+	 * Representa la posicion de columna que tendran en el tablero.
+	 */
 	private byte posicionCol;
 
 }
