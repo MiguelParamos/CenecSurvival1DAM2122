@@ -13,23 +13,16 @@ public class Tablero extends EntidadConNombre {
 	/**	personaje representa un jugador de tipo Jugador, el cual se usara para jugar.	**/
 	private Jugador personaje;
 	
-	
+	/**
+	 * constructor de tablero
+	 * @param lugares matriz de lugares
+	 * @param personaje de la clase jugadaor **/
 	public Tablero(String nombre, Lugar[][] lugares, Jugador personaje) {
 		super(nombre);
 		this.lugares = lugares;
 		this.personaje = personaje;
 	}
 
-/**
- * constructor de tablero
- * @param lugares matriz de lugares
- * @param personaje de la clase jugadaor
- */
-	public Tablero(Lugar[][] lugares, Jugador personaje) {
-		super();
-		this.lugares = lugares;
-		this.personaje = personaje;
-	}
 
 /**
  * getter de lugares
