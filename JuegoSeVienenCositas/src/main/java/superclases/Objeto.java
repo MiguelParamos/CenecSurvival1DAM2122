@@ -7,7 +7,9 @@ import superclases.EntidadConMonedas;
  *
  */
 public class Objeto extends EntidadConMonedas{
-
+/**
+ * Representa un objeto estiende de EntidadConMonedas
+ */
 	public Objeto() {
 		super();
 		// TODO Auto-generated constructor stub
