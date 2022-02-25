@@ -11,12 +11,13 @@ public class EntidadConMonedas extends EntidadConNombre {
 	private byte dinero;
 
 	/**
-	 * Constructor de una entidad con monedas 
-	 * @param dinero el numero de dinero que tendrá la entidad
+	 * Constuctor de la entidad con monedas
+	 * @param nombre El nombre que tendrá la entidad
+	 * @param dinero La cantidad de monedas que tendrá la entidad
 	 */
 	
-	public EntidadConMonedas(byte dinero) {
-		super();
+	public EntidadConMonedas(String nombre, byte dinero) {
+		super(nombre);
 		this.dinero = dinero;
 	}
 
