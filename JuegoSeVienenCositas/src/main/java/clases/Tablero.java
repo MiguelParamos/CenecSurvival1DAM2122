@@ -19,6 +19,49 @@ public class Tablero extends EntidadConNombre {
 		this.lugares = lugares;
 		this.personaje = personaje;
 	}
+
+/**
+ * constructor de tablero
+ * @param lugares matriz de lugares
+ * @param personaje de la clase jugadaor
+ */
+	public Tablero(Lugar[][] lugares, Jugador personaje) {
+		super();
+		this.lugares = lugares;
+		this.personaje = personaje;
+	}
+
+/**
+ * getter de lugares
+ * @return un lugar 
+ */
+	public Lugar[][] getLugares() {
+		return lugares;
+	}
+
+/**
+ * setter de lugares
+ * @param lugares matriz de lugares
+ */
+	public void setLugares(Lugar[][] lugares) {
+		this.lugares = lugares;
+	}
+
+/**
+ * getter de personaje
+ * @return personaje 
+ */
+	public Jugador getPersonaje() {
+		return personaje;
+	}
+
+/**
+ * setter de personaje
+ * @param personaje de la clase jugador
+ */
+	public void setPersonaje(Jugador personaje) {
+		this.personaje = personaje;
+	}
 	
 	
 }
