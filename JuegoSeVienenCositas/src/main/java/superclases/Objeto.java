@@ -8,10 +8,7 @@ import superclases.EntidadConMonedas;
  */
 public class Objeto extends EntidadConMonedas{
 
-	public Objeto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	
 
 }
