@@ -6,7 +6,7 @@ import superclases.EntidadConMonedas;
  * @author Antonio Jesus Rodriguez
  *
  */
-public class Objeto extends EntidadConMonedas{
+public abstract class Objeto extends EntidadConMonedas{
 	/**
 	 * Representa un objeto estiende de EntidadConMonedas
 	 * @param nombre nombre del objeto

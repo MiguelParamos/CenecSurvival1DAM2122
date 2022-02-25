@@ -44,12 +44,7 @@ public class Personaje extends EntidadConMonedas {
 	public void setProteccion(Proteccion proteccion) {
 		this.proteccion = proteccion;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+
 	
 	
 	
