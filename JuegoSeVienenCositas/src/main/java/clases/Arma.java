@@ -14,12 +14,16 @@ public class Arma extends Objeto{
 	/** representa los puntos de ataque del arma **/
 	private byte puntosAtaque;
 
+	
 	/**
-	 * Constructor de la clase arma recibe el ataque
-	 * De vuelve el ataque de arma
+	 * Constructo de arma con todos sus campos
+	 * @param nombre nombre del arma
+	 * @param dinero lo que cuesta el arma
+	 * @param puntosAtaque puntos maximos que inflinge el arma al atacar
 	 */
-	public Arma(byte pA) {
-		this.setPuntosAtaque(pA);
+	public Arma(String nombre, byte dinero, byte puntosAtaque) {
+		super(nombre, dinero);
+		this.puntosAtaque = puntosAtaque;
 	}
 
 	/**
