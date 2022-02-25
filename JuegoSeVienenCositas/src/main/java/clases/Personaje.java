@@ -22,35 +22,53 @@ public class Personaje extends EntidadConMonedas {
 	/**
 	 * Representa el nombre del personaje
 	 */
+	
+	/**
+	 * Constructor de personaje, hereda de EntidadConMonedas
+	 * @param String de nombre
+	 * @param byte de dinero
+	 * @param short de vida
+	 * @param clase Arma de arma(variable interna)
+	 * @param clase Proteccion de proteccion(variable interna)
+	 * 
+	 */
 	private String nombre;
-	public Personaje(String nombre, byte dinero, short vida, Arma arma, Proteccion proteccion, String nombre2) {
+	public Personaje(String nombre, byte dinero, short vida, Arma arma, Proteccion proteccion) {
 		super(nombre, dinero);
 		this.vida = vida;
 		this.arma = arma;
 		this.proteccion = proteccion;
-		nombre = nombre2;
+		
 	}
+	/**Getter de vida**/
 	public short getVida() {
 		return vida;
 	}
+	/**Setter de vida**/
 	public void setVida(short vida) {
 		this.vida = vida;
 	}
+	/**Getter de Arma**/
 	public Arma getArma() {
 		return arma;
 	}
+	/**Setter de Arma**/
 	public void setArma(Arma arma) {
 		this.arma = arma;
 	}
+	/**Getter de Proteccion**/
 	public Proteccion getProteccion() {
 		return proteccion;
 	}
+	/**Setter de Proteccion**/
 	public void setProteccion(Proteccion proteccion) {
 		this.proteccion = proteccion;
 	}
+	/**Getter de nombre**/
 	public String getNombre() {
 		return nombre;
 	}
+	/**Setter de nombre**/
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
