@@ -1,7 +1,7 @@
 package clases;
 
 public class Pocion {
-    byte cantidadPuntoRestaurados;
+    private byte cantidadPuntoRestaurados;
 
     public Pocion(byte cantidadPuntoRestaurados) {
         this.cantidadPuntoRestaurados = cantidadPuntoRestaurados;
