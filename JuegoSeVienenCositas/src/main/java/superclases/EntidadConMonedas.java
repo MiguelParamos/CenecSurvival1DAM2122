@@ -21,6 +21,7 @@ public class EntidadConMonedas extends EntidadConNombre {
 		this.dinero = dinero;
 	}
 
+
 	/**
 	 * Getter de dinero
 	 * @return El dinero que tiene la entidad

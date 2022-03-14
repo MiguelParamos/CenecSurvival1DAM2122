@@ -22,6 +22,9 @@ public class Tienda {
 		this.articulosEnVenta.add(espada);
 		this.articulosEnVenta.add(escudo);
 	}
+	public Tienda(ArrayList<Objeto> catalogo) {
+		this.articulosEnVenta = catalogo;
+	}
 	
 	
 }

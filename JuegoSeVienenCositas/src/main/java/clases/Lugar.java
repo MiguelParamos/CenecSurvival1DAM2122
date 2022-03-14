@@ -36,6 +36,14 @@ public Lugar(String nombre, byte dinero, Pocion pocion, Enemigo enemigo, Tienda 
 	this.descripcion = descripcion;
 }
 
+public Lugar(String nombre,String descripcion) {
+	super(descripcion, nombre);
+	this.pocion = null;
+	this.enemigo = null;
+	this.tienda = null;
+	this.descripcion = null;
+}
+
 /**
  * getter Pocion
  * @return pocion que hay en el lugar
