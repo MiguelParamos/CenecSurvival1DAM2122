@@ -37,7 +37,7 @@ public Lugar(String nombre, byte dinero, Pocion pocion, Enemigo enemigo, Tienda 
 }
 
 public Lugar(String nombre,String descripcion) {
-	super(descripcion, nombre);
+	super(nombre, (byte)0);
 	this.pocion = null;
 	this.enemigo = null;
 	this.tienda = null;
