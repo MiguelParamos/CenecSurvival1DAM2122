@@ -14,11 +14,11 @@ public class Personaje extends EntidadConMonedas {
 	 */
 	private short vida;
 	/**
-	 * Representa los puntos de ataque del arma
+	 * Almacena el Arma que tiene actualmente el Personaje.
 	 */
 	private Arma arma;
 	/**
-	 * Representa los puntos de proteccion de la defensa
+	 * Almacena la protección que tiene actualmente el Personaje.
 	 */
 	private Proteccion proteccion;
 
