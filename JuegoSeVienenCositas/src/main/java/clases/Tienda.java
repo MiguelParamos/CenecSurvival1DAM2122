@@ -12,7 +12,7 @@ import superclases.Objeto;
  * @version 1
  */
 public class Tienda {
-	/** Representa una lista de armas que se puede comprar **/
+	/** Representa una lista de armas,pociones o protecciones que se puede comprar **/
 	private ArrayList<Objeto> articulosEnVenta;
 
 	/**
