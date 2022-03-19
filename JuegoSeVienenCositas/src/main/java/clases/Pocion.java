@@ -16,27 +16,23 @@ public class Pocion extends Objeto {
 	private byte cantidadPuntoRestaurados;
 
 	/**
-	 * Este es un constructor que permite trabajar con las variables de la
-	 * superclase
+	 * Constructor de poci贸n con todos sus campos
 	 * 
-	 * @param nombre                   es el nombre del jugador,es una variable
-	 *                                 heredada
-	 * @param dinero                   es el dinero acumulado del jugador,es una
-	 *                                 variable heredada
-	 * @param cantidadPuntoRestaurados esta variable se usa para calcular la
-	 *                                 cantidad de vida que recupera el personaje al
-	 *                                 recuperar vida
+	 * @param nombre                   nombre de la poci贸n
+	 * @param precio                   precio de la poci贸n
+	 * @param cantidadPuntoRestaurados cantidad de puntos de vida que restaura la
+	 *                                 poci贸n
 	 */
-	public Pocion(String nombre, byte dinero, byte cantidadPuntoRestaurados) {
-		super(nombre, dinero);
+	public Pocion(String nombre, byte precio, byte cantidadPuntoRestaurados) {
+		super(nombre, precio);
 		this.cantidadPuntoRestaurados = cantidadPuntoRestaurados;
 	}
 
 	/**
 	 * getter de pocion
 	 * 
-	 * @return cantidadPuntoRestaurados devuelve la cantidad de puntos de salud que
-	 *         se restauran al tomar una poci髇
+	 * @return devuelve la cantidad de puntos de salud que se restauran al tomar una
+	 *         poci贸n
 	 */
 	public byte getCantidadPuntoRestaurados() {
 		return cantidadPuntoRestaurados;
@@ -46,10 +42,20 @@ public class Pocion extends Objeto {
 	 * setter de pocion
 	 * 
 	 * @param cantidadPuntoRestaurados devuelve la cantidad de puntos de salud que
-	 *                                 se restauran al tomar una poci髇
+	 *                                 se restauran al tomar una poci贸n
 	 */
 	public void setCantidadPuntoRestaurados(byte cantidadPuntoRestaurados) {
 		this.cantidadPuntoRestaurados = cantidadPuntoRestaurados;
+	}
+
+	/**
+	 * funci贸n toString, que muestra la informaci贸n del objeto
+	 * 
+	 * @return String con la informaci贸n del objeto en una sola l铆nea
+	 */
+	public String toString() {
+		return "Poci贸n: " + this.getNombre() + " | Puntos que restaura: " + this.cantidadPuntoRestaurados
+				+ " | sPrecio: " + this.getDinero();
 	}
 
 }

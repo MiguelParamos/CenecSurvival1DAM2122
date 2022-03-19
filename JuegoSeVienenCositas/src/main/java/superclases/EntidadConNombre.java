@@ -2,7 +2,8 @@ package superclases;
 
 /**
  * Representa una entidad con un nombre concreto
- * @author MParamos
+ * 
+ * @author Miguel Páramos
  *
  */
 public abstract class EntidadConNombre {
@@ -11,6 +12,7 @@ public abstract class EntidadConNombre {
 
 	/**
 	 * Constructor de la clase nombre, solo recibe el nombre
+	 * 
 	 * @param nombre el nombre que tendrá la entidad
 	 */
 	public EntidadConNombre(String nombre) {
@@ -20,6 +22,7 @@ public abstract class EntidadConNombre {
 
 	/**
 	 * getter de nombre
+	 * 
 	 * @return nombre de la entidad
 	 */
 	public String getNombre() {
@@ -28,13 +31,11 @@ public abstract class EntidadConNombre {
 
 	/**
 	 * setter de nombre
+	 * 
 	 * @param nombre nuevo nombre que tendra la entidad
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
-	
-	
+
 }

@@ -1,14 +1,18 @@
 package superclases;
 
 import superclases.EntidadConMonedas;
+
 /**
- * Represntar� un objeto, el cual ser� una pocion, un arma o una proteccion
+ * Represntará un objeto, el cual será una pocion, un arma o una proteccion
+ * 
  * @author Antonio Jesus Rodriguez
  *
  */
-public abstract class Objeto extends EntidadConMonedas{
+public abstract class Objeto extends EntidadConMonedas {
+
 	/**
 	 * Representa un objeto estiende de EntidadConMonedas
+	 * 
 	 * @param nombre nombre del objeto
 	 * @dinero dinero que cuesta el objeto
 	 */
@@ -16,10 +20,5 @@ public abstract class Objeto extends EntidadConMonedas{
 		super(nombre, dinero);
 		// TODO Auto-generated constructor stub
 	}
-
-
-
-
-	
 
 }

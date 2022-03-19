@@ -11,6 +11,7 @@ import superclases.Objeto;
  * el cual se usara para jugar.
  * 
  * @author Marcos Garcia Medina
+ * @author Miguel Páramos
  *
  */
 public class Tablero extends EntidadConNombre {
@@ -22,146 +23,232 @@ public class Tablero extends EntidadConNombre {
 	private Jugador personaje;
 
 	/**
-	 * constructor de tablero
+	 * Constructor de tablero que inicializa todo, y deja el tablero listo para
+	 * empezar la partida
 	 * 
-	 * @param lugares   matriz de lugares
-	 * @param personaje de la clase jugadaor
-	 **/
-	public Tablero(String nombreJugador) {
-		super("cermuzo");
-		this.lugares = lugares;
-
-		this.lugares = new Lugar[4][4];
-
-		this.lugares[0][0] = new Lugar("Sala1", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[0][1] = new Lugar("Sala2", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[0][2] = new Lugar("Sala3", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[0][3] = new Lugar("Sala4", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[1][0] = new Lugar("Sala5", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[1][1] = new Lugar("Sala6", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[1][2] = new Lugar("Sala7", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[1][3] = new Lugar("Sala8", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[2][0] = new Lugar("Sala9", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[2][1] = new Lugar("Sala10", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[2][2] = new Lugar("Sala11", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[2][3] = new Lugar("Sala12", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[3][0] = new Lugar("Sala13", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[3][1] = new Lugar("Sala14", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[3][2] = new Lugar("Sala15", "Descripcion de ejemplo,no s� me da pereza");
-		this.lugares[3][3] = new Lugar("Sala16", "Descripcion de ejemplo,no s� me da pereza");
-
-		Arma arma1 = new Arma("McAitana", (byte) 50, (byte) 50);
-		Arma arma2 = new Arma("El mensajero del mensajero", (byte) 50, (byte) 50);
-		Arma arma3 = new Arma("Asistencia de Marcos", (byte) 50, (byte) 50);
-		Arma arma4 = new Arma("Subn�utica", (byte) 50, (byte) 50);
-
-		Proteccion defensa1 = new Proteccion("CEO del KFC", (byte) 50, (byte) 50);
-		Proteccion defensa2 = new Proteccion("Zielinski", (byte) 50, (byte) 50);
-		Proteccion defensa3 = new Proteccion("Masi", (byte) 50, (byte) 0);
-		Proteccion defensa4 = new Proteccion("Llorar por las noches", (byte) 50, (byte) 50);
-
+	 * @param nombreJugador nombre del jugador/a que jugará la partida
+	 * @param generoJugador género del jugador/a. Solo puede ser 'm' o 'f'
+	 */
+	public Tablero(String nombreJugador, char generoJugador) {
+		// Se crea el tablero con un nombre
+		super("Tierra de cermuzos");
 		Random r = new Random();
 
-		Enemigo enemigo1 = new Enemigo("Skippy", (byte) r.nextInt(((25 - 5) + 5)), (byte) 100, arma2, defensa1, false);
-		Enemigo enemigo2 = new Enemigo("IlloJuan", (byte) r.nextInt(((25 - 5) + 5)), (byte) 100, arma4, defensa3,
-				false);
-		Enemigo enemigo3 = new Enemigo("Marcos", (byte) r.nextInt(((25 - 5) + 5)), (byte) 100, arma3, defensa4, false);
-		Enemigo enemigo4 = new Enemigo("Putin", (byte) r.nextInt(((25 - 5) + 5)), (byte) 100, arma1, defensa2, false);
+		// Se crean e inicializan todos los lugares que habrá jugables en el tablero
+		this.lugares = new Lugar[4][4];
 
-		Arma arma5 = new Arma("RickRoll", (byte) 80, (byte) 99);
-		Proteccion defensa5 = new Proteccion("Average Internet troll", (byte) 99, (byte) 99);
+		this.lugares[0][0] = new Lugar("Acantilado al mar I",
+				"Estás ante un acantilado, que da al mar. Es un sitio muy remoto. Más allá no hay nada al norte ni al oeste. Solo puedes ir al sur y al norte.");
+		this.lugares[0][1] = new Lugar("Puerto abandonado",
+				"Está claro que este antiguo puerto pesquero lleva mucho tiempo abandonado. No hay nada que hacer al norte, pues todas las embarcaciones están destrozadas.");
+		this.lugares[0][2] = new Lugar("Ruinas sin identificar",
+				"Tienes ante tí una especie de monumento megalítico en la orilla. No puedes identificar nada, ni avanzar hacia el norte, pues el mar te corta el paso");
+		this.lugares[0][3] = new Lugar("El culo del mundo",
+				"Hacia el norte y el este solo puedes ver la desembocadura del río, y el mar lleno de basura flotando. Es asqueroso, no vas a ir por ahí.");
+		this.lugares[1][0] = new Lugar("Viejo faro",
+				"Te encuentras ante un viejo faro, que señaliza la presencia de este lugar a los navegantes que vienen del este. Precisamente en la dirección en la que no puedes avanzar...");
+		this.lugares[1][1] = new Lugar("Pueblo Paleta",
+				"Los vecinos del lugar aconsejan no meterse en la hierba alta, o ciertos bichos te morderán los tobillos.");
+		this.lugares[1][2] = new Lugar("Sendero en la pradera I",
+				"No hay mucho que hacer aquí, más que seguir el sendero al este o el sur, o ir a cualquier otra dirección. Pero aquí no se te ha perdido nada aparte del aire puro del campo.");
+		this.lugares[1][3] = new Lugar("Orilla del Río I",
+				"El río te corta el paso hacia el este, pero puedes avanzar en cualquier otra dirección, o refrescarte en el agua.");
+		this.lugares[2][0] = new Lugar("Acantilado al mar II",
+				"Las vistas son muy bonitas aquí, pero las cosas que hacer son pocas. Sobre todo hacia el oeste, ya que el camino acaba en el acantilado");
+		this.lugares[2][1] = new Lugar("Reunión secreta de la secta de los viejos locos",
+				"Quieres pasar por esta zona rápidamente, porque solo ves a muchos viejos con los pantalones bajados, cantando algo sobre yeguas grises.");
+		this.lugares[2][2] = new Lugar("Sendero en la pradera II",
+				"Este sendero atraviesa la zona de norte a sur. Puedes seguirlo, o ir campo a través a cualquier otro sitio.");
+		this.lugares[2][3] = new Lugar("Orilla del Río II",
+				"Se corta el paso al este por un río demasiado ancho como para atravesarlo. No tienes nada más que hacer aquí, lárgate.");
+		this.lugares[3][0] = new Lugar("Accidente geográfico",
+				"Nunca antes habías visto una montaña demasiado escarpada como para escalarla dar al mar directamente. El mar te corta el camino al oeste, y la montaña al sur. Ve por otro lado.");
+		this.lugares[3][1] = new Lugar("Cueva de las salapatiusas",
+				"No, no puedo describirte qué es una salapatiusa. Porque todo el que ha visto una, ha muerto de forma horrible. no vayas hacia el sur.");
+		this.lugares[3][2] = new Lugar("Un pueblo italiano al pié de las montañas",
+				"El pueblo es bonito, su gente agradable, menos un tal Marco, que tiene traumas infantiles. Las montañas de cortan el camino al sur.");
+		this.lugares[3][3] = new Lugar("Orilla del Río III",
+				"Ves el río venir desde el sur, y subir por el este hacia el norte. Los caminos al sur y al este están cortados por el río.");
 
-		Enemigo enemigoFinal = new Enemigo("Rick Astley", (byte) r.nextInt(((25 - 5) + 5)), (byte) 100, arma5, defensa5,
-				true);
-		Enemigo[] enemigosMundo = { enemigo1, enemigo2, enemigo3, enemigo4, enemigoFinal };
+		// Se inicializan las armas que portarán los cuatro enemigos que no son el boss
+		// final
+		Arma armaEnemigo1 = new Arma("Chancla vieja", (byte) 10, (byte) 5);
+		Arma armaEnemigo2 = new Arma("Puñalico oxidao", (byte) 15, (byte) 10);
+		Arma armaEnemigo3 = new Arma("Mandoble que no es doble", (byte) 15, (byte) 10);
+		Arma armaEnemigo4 = new Arma("La derritecerumen", (byte) 20, (byte) 15);
 
-		Pocion pocion1 = new Pocion("ibuprofeno y pal cole", (byte) 15, (byte) 5);
-		Pocion pocion2 = new Pocion("chancletazo en la nalga", (byte) 30, (byte) 1);
-		Pocion pocion3 = new Pocion("McFlurry", (byte) 30, (byte) 25);
-		Pocion pocion4 = new Pocion("Vix Vaporub", (byte) 65, (byte) 50);
+		// Se inicializan las protecciones que portarán los cuatro enemigos que no son
+		// el boss final
+		Proteccion defensaEnemigo1 = new Proteccion("Escudo de cartón piedra", (byte) 10, (byte) 5);
+		Proteccion defensaEnemigo2 = new Proteccion("La vergüenza de un político", (byte) 5, (byte) 1);
+		Proteccion defensaEnemigo3 = new Proteccion("Escudo de globitos de titanio", (byte) 15, (byte) 20);
+		Proteccion defensaEnemigo4 = new Proteccion("Escudo hecho de facturas de la luz", (byte) 30, (byte) 20);
 
+		// Se crea un array de armas de enemigos, que se usará para asignar las armas
+		// aleatoriamente
+		ArrayList<Arma> armasEnemigos = new ArrayList<Arma>();
+		armasEnemigos.add(armaEnemigo1);
+		armasEnemigos.add(armaEnemigo2);
+		armasEnemigos.add(armaEnemigo3);
+		armasEnemigos.add(armaEnemigo4);
+
+		// Se crea un array de protecciones de enemigos, que se usará para asignar las
+		// protecciones aleatoriamente
+		ArrayList<Proteccion> proteccionEnemigos = new ArrayList<Proteccion>();
+		proteccionEnemigos.add(defensaEnemigo1);
+		proteccionEnemigos.add(defensaEnemigo2);
+		proteccionEnemigos.add(defensaEnemigo3);
+		proteccionEnemigos.add(defensaEnemigo4);
+
+		// Se crea un array de nombres de enemigos, que se usará para sortear los
+		// nombres aleatoriamente
+		ArrayList<String> nombresEnemigos = new ArrayList<String>();
+		nombresEnemigos.add("Entidad no demasiado maligna");
+		nombresEnemigos.add("Mala juntura");
+		nombresEnemigos.add("Idiota del pueblo");
+		nombresEnemigos.add("Traficante de Cancamusas");
+
+		// Se crea el arrayList de enemigos, donde se meterán todos los enemigos,
+		// incluído el boss final
+		ArrayList<Enemigo> enemigosMundo = new ArrayList<Enemigo>();
+
+		// Se sortea un arma, una proteccion y un nombre para cada uno de los enemigos,
+		// y se meten todos
+		// en enemigosMundo. Ninguno será el boss final
+		while (armasEnemigos.size() > 0) {
+
+			byte armaAleatoria = (byte) r.nextInt(armasEnemigos.size());
+			byte proteccionAleatoria = (byte) r.nextInt(proteccionEnemigos.size());
+			byte nombreAleatorio = (byte) r.nextInt(nombresEnemigos.size());
+
+			enemigosMundo.add(new Enemigo(nombresEnemigos.get(nombreAleatorio), (r.nextBoolean() ? 'm' : 'f'),
+					(byte) r.nextInt(26), (byte) r.nextInt(100), armasEnemigos.get(armaAleatoria),
+					proteccionEnemigos.get(proteccionAleatoria), false));
+			proteccionEnemigos.remove(proteccionAleatoria);
+			armasEnemigos.remove(armaAleatoria);
+			nombresEnemigos.remove(nombreAleatorio);
+		}
+
+		// Se crean la arma y la protección que llevará el boss final, con una fuerza y
+		// una defensa aleatorias entre 15 y 40
+		Arma armaBoss = new Arma("La cermuzadora", (byte) 30, (byte) (15 + r.nextInt(25)));
+		Proteccion defensaBoss = new Proteccion("Olor corporal irrespirable", (byte) 30, (byte) (15 + r.nextInt(25)));
+
+		// Se añade el enemigo final al mundo
+		enemigosMundo.add(new Enemigo("El primo loco de Voldemort", 'm', (byte) r.nextInt(((25 - 5) + 5)), (byte) 100,
+				armaBoss, defensaBoss, true));
+
+		// Se crean las pociones que apareceran sueltas por el mundo y se meten en un
+		// array
+		Pocion pocion1 = new Pocion("ibuprofeno caducado", (byte) 15, (byte) 5);
+		Pocion pocion2 = new Pocion("Aspirina", (byte) 30, (byte) 10);
+		Pocion pocion3 = new Pocion("Poción roja", (byte) 30, (byte) 25);
+		Pocion pocion4 = new Pocion("Poción muy roja", (byte) 65, (byte) 50);
 		Pocion[] pocionesMundo = { pocion1, pocion2, pocion3, pocion4 };
 
-		Arma armaTienda1 = new Arma("V�mito de nyan cat", (byte) 50, (byte) 50);
-		Arma armaTienda2 = new Arma("Benzema contra el PSG", (byte) 50, (byte) 100);
-		Arma armaTienda3 = new Arma("Un buen SIUUUUUU del bicho", (byte) 50, (byte) 50);
+		// Se crean las armas que venderá la tienda
+		Arma armaTienda1 = new Arma("La Soplagaitas", (byte) 15, (byte) 10);
+		Arma armaTienda2 = new Arma("La segadora de almas", (byte) 40, (byte) 25);
+		Arma armaTienda3 = new Arma("La trepanadora de sobacos", (byte) 25, (byte) 15);
+		Arma armaTienda4 = new Arma("La deshollinadora de narices", (byte) 30, (byte) 20);
 
-		Proteccion defensaTienda1 = new Proteccion("Poder de la amistad", (byte) 50, (byte) 100);
-		Proteccion defensaTienda2 = new Proteccion("Militao", (byte) 50, (byte) 50);
-		Proteccion defensaTienda3 = new Proteccion("Dinero del Al-Khelaifi", (byte) 50, (byte) 1);
+		// Se crean las protecciones que venderá la tienda
+		Proteccion defensaTienda1 = new Proteccion("Escudo Hyliano", (byte) 40, (byte) 25);
+		Proteccion defensaTienda2 = new Proteccion("Escudo Espartano", (byte) 30, (byte) 20);
+		Proteccion defensaTienda3 = new Proteccion("Escudo del capitán América", (byte) 25, (byte) 15);
+		Proteccion defensaTienda4 = new Proteccion("Tapa de alcantarilla", (byte) 15, (byte) 10);
 
-		Pocion pocionTienda1 = new Pocion("Coca-cola espuma", (byte) 65, (byte) 50);
-		Pocion pocionTienda2 = new Pocion("stoic mike wazowski", (byte) 65, (byte) 50);
-		Pocion pocionTienda3 = new Pocion("La roca Johnson", (byte) 65, (byte) 50);
+		// Se crean las pociones que venderá la tienda
+		Pocion pocionTienda1 = new Pocion("Frasquito de vida", (byte) 10, (byte) 15);
+		Pocion pocionTienda2 = new Pocion("Chupito de vida", (byte) 20, (byte) 30);
+		Pocion pocionTienda3 = new Pocion("Bebercio de vida", (byte) 30, (byte) 60);
+		Pocion pocionTienda4 = new Pocion("Botijo de vida", (byte) 50, (byte) 100);
 
+		// Se crea un array con todos los objetos (armas,protecciones y pociones) que
+		// venderá la tienda
+		// Y se añaden todos
 		ArrayList<Objeto> articulos = new ArrayList<Objeto>();
-
 		articulos.add(armaTienda1);
 		articulos.add(armaTienda2);
 		articulos.add(armaTienda3);
-
+		articulos.add(armaTienda4);
 		articulos.add(defensaTienda1);
 		articulos.add(defensaTienda2);
 		articulos.add(defensaTienda3);
-
+		articulos.add(defensaTienda4);
 		articulos.add(pocionTienda1);
 		articulos.add(pocionTienda2);
 		articulos.add(pocionTienda3);
+		articulos.add(pocionTienda4);
 
+		// Se crea la tienda
 		Tienda coviran = new Tienda(articulos);
 
-		byte fila1;
-		byte columna1;
-
+		// Variables que nos servirán para colocar aleatoriamente cosas
+		byte filaAleatoria;
+		byte columnaAleatoria;
 		byte i = 0;
 
+		// Se colocan aleatoriamente todas las pociones del mundo, cada una en un Lugar
+		// aleatorio,
+		// y asegurándonos que no se machaca una con otra en el mismo Lugar del mundo
 		while (i < pocionesMundo.length) {
 
-			fila1 = (byte) r.nextInt(((3 - 0) + 0));
-			columna1 = (byte) r.nextInt(((3 - 0) + 0));
+			filaAleatoria = (byte) r.nextInt(4);
+			columnaAleatoria = (byte) r.nextInt(4);
 
-			if (this.lugares[fila1][columna1].getPocion() != null) {
+			if (this.lugares[filaAleatoria][columnaAleatoria].getPocion() == null) {
+				this.lugares[filaAleatoria][columnaAleatoria].setPocion(pocionesMundo[i]);
+				i++;
+			}
+		}
+		i = 0;
 
-			} else {
-				this.lugares[fila1][columna1].setPocion(pocionesMundo[i]);
+		// Se colocan aleatoriamente todos los enemigos del mundo, cada uno en un Lugar
+		// aleatorio,
+		// y asegurándonos que no se machaca uno con otro en el mismo Lugar del mundo
+		while (i < enemigosMundo.size()) {
+
+			filaAleatoria = (byte) r.nextInt(4);
+			columnaAleatoria = (byte) r.nextInt(4);
+
+			if (this.lugares[filaAleatoria][columnaAleatoria].getEnemigo() == null) {
+				this.lugares[filaAleatoria][columnaAleatoria].setEnemigo(enemigosMundo.get(i));
 				i++;
 			}
 
 		}
 		i = 0;
-		while (i < enemigosMundo.length) {
 
-			fila1 = (byte) r.nextInt(((3 - 0) + 0));
-			columna1 = (byte) r.nextInt(((3 - 0) + 0));
+		// Se coloca aleatoriamente la tienda, en un Lugar aleatorio
+		filaAleatoria = (byte) r.nextInt(4);
+		columnaAleatoria = (byte) r.nextInt(4);
 
-			if (this.lugares[fila1][columna1].getEnemigo() != null) {
+		this.lugares[filaAleatoria][columnaAleatoria].setTienda(coviran);
 
-			} else {
-				this.lugares[fila1][columna1].setEnemigo(enemigosMundo[i]);
-				i++;
-			}
-
-		}
-		fila1 = (byte) r.nextInt(((3 - 0) + 0));
-		columna1 = (byte) r.nextInt(((3 - 0) + 0));
-
-		this.lugares[fila1][columna1].setTienda(coviran);
-
-		i = 0;
-
+		// Se colocan aleatoriamente todas las cantidades de dinero sueltas, cada una en
+		// un Lugar aleatorio,
+		// y asegurándonos que no se machaca una con otra en el mismo Lugar del mundo
 		while (i < 5) {
 
-			fila1 = (byte) r.nextInt(((3 - 0) + 0));
-			columna1 = (byte) r.nextInt(((3 - 0) + 0));
+			filaAleatoria = (byte) r.nextInt(4);
+			columnaAleatoria = (byte) r.nextInt(4);
 
-			if (this.lugares[fila1][columna1].getDinero() != 0) {
-
-			} else {
-				this.lugares[fila1][columna1].setDinero((byte) r.nextInt(((100 - 0) + 0)));
+			if (this.lugares[filaAleatoria][columnaAleatoria].getDinero() == 0) {
+				this.lugares[filaAleatoria][columnaAleatoria].setDinero((byte) r.nextInt(51));
 				i++;
 			}
 
 		}
+		i = 0;
+
+		// Se declaran el arma y la protección del jugador, y se crea un jugador en un
+		// sitio
+		// Aleatorio del mapa.
+		Arma armaJugador = new Arma("Bolígrafo muy afilado", (byte) 5, (byte) 5);
+		Proteccion defensaJugador = new Proteccion("Monitor del aula 2", (byte) 5, (byte) 5);
+		this.personaje = new Jugador(nombreJugador, generoJugador, (byte) 0, (short) 100, armaJugador, defensaJugador,
+				(byte) r.nextInt(4), (byte) r.nextInt(4));
 
 	}
 
@@ -186,7 +273,7 @@ public class Tablero extends EntidadConNombre {
 	/**
 	 * getter de personaje
 	 * 
-	 * @return personaje
+	 * @return personaje jugador
 	 */
 	public Jugador getPersonaje() {
 		return personaje;
