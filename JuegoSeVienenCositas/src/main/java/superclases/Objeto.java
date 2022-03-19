@@ -11,14 +11,13 @@ import superclases.EntidadConMonedas;
 public abstract class Objeto extends EntidadConMonedas {
 
 	/**
-	 * Representa un objeto estiende de EntidadConMonedas
+	 * Representa un objeto extiende de EntidadConMonedas
 	 * 
 	 * @param nombre nombre del objeto
 	 * @dinero dinero que cuesta el objeto
 	 */
 	public Objeto(String nombre, byte dinero) {
 		super(nombre, dinero);
-		// TODO Auto-generated constructor stub
 	}
 
 }
