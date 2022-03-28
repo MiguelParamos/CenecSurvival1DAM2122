@@ -3,6 +3,8 @@ package se.vienen.cositas.main;
 import java.util.Scanner;
 
 import clases.Tablero;
+import excepciones.GeneroInvalidoException;
+import excepciones.NombreVacioException;
 
 /**
  * Clase principal, donde se desarrollará el juego hasta que acabe
@@ -26,13 +28,25 @@ public class Juego {
 		System.out.println("Espera lo mejor, prepárate para lo peor, porque se vienen cositas...");
 		System.out.println("-------------------------------------------------------------------\n\n");
 
-		System.out.println("Elige el género de tu personaje (m - masculino /f - femenino): ");
-		char genero = sc.nextLine().charAt(0);
-
-		System.out.println("Jugador" + (genero == 'f' ? "a" : "") + ", introduce tu nombre:");
-		String nombre = sc.nextLine();
-		System.out.println("\n");
-		Tablero tablero = new Tablero(nombre, genero);
+	
+		Tablero tablero=null;
+		boolean tableroOk=true;
+		do {
+			try {
+				System.out.println("Elige el género de tu personaje (m - masculino /f - femenino): ");
+				char genero = sc.nextLine().charAt(0);
+	
+				System.out.println("Jugador" + (genero == 'f' ? "a" : "") + ", introduce tu nombre:");
+				String nombre = sc.nextLine();
+				System.out.println("\n");
+				
+				tablero = new Tablero(nombre, genero);
+				tableroOk=true;
+			} catch (GeneroInvalidoException | NombreVacioException e) {
+				System.out.println(e.getMessage());
+				tableroOk=false;
+			}
+		}while(!tableroOk);
 		
 		//Aquí comenzaría el bucle del juego.
 		//while(tablero.getPersonaje().estaVivo()){

@@ -1,5 +1,6 @@
 package clases;
 
+import excepciones.NombreVacioException;
 import superclases.Objeto;
 
 /**
@@ -21,8 +22,9 @@ public class Arma extends Objeto {
 	 * @param nombre       nombre del arma
 	 * @param dinero       lo que cuesta el arma
 	 * @param puntosAtaque puntos maximos que inflinge el arma al atacar
+	 * @throws NombreVacioException 
 	 */
-	public Arma(String nombre, byte precio, byte puntosAtaque) {
+	public Arma(String nombre, byte precio, byte puntosAtaque) throws NombreVacioException {
 		super(nombre, precio);
 		this.puntosAtaque = puntosAtaque;
 	}

@@ -1,5 +1,6 @@
 package clases;
 
+import excepciones.NombreVacioException;
 import superclases.Objeto;
 
 /**
@@ -22,8 +23,9 @@ public class Pocion extends Objeto {
 	 * @param precio                   precio de la poción
 	 * @param cantidadPuntoRestaurados cantidad de puntos de vida que restaura la
 	 *                                 poción
+	 * @throws NombreVacioException 
 	 */
-	public Pocion(String nombre, byte precio, byte cantidadPuntoRestaurados) {
+	public Pocion(String nombre, byte precio, byte cantidadPuntoRestaurados) throws NombreVacioException {
 		super(nombre, precio);
 		this.cantidadPuntoRestaurados = cantidadPuntoRestaurados;
 	}

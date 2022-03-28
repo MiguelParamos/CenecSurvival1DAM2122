@@ -1,5 +1,7 @@
 package superclases;
 
+import excepciones.NombreVacioException;
+
 /**
  * Representa una entidad con monedas con un dato tipo byte que va a representar
  * el dinero que tenga cada personaje o el dinero que se pueda encontrar un
@@ -20,9 +22,10 @@ public class EntidadConMonedas extends EntidadConNombre {
 	 * 
 	 * @param nombre El nombre que tendr� la entidad
 	 * @param dinero La cantidad de monedas que tendr� la entidad
+	 * @throws NombreVacioException 
 	 */
 
-	public EntidadConMonedas(String nombre, byte dinero) {
+	public EntidadConMonedas(String nombre, byte dinero) throws NombreVacioException {
 		super(nombre);
 		this.dinero = dinero;
 	}

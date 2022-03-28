@@ -1,5 +1,6 @@
 package clases;
 
+import excepciones.NombreVacioException;
 import superclases.Objeto;
 
 /**
@@ -20,8 +21,9 @@ public class Proteccion extends Objeto {
 	 * @param nombre        nombre de la protección
 	 * @param precio        precio de la protección
 	 * @param puntosDefensa puntos de defensa que otorga la protección
+	 * @throws NombreVacioException 
 	 */
-	public Proteccion(String nombre, byte precio, byte puntosDefensa) {
+	public Proteccion(String nombre, byte precio, byte puntosDefensa) throws NombreVacioException {
 		super(nombre, precio);
 		this.puntosDefensa = puntosDefensa;
 	}

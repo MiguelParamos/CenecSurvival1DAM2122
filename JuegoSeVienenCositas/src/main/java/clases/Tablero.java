@@ -2,7 +2,8 @@ package clases;
 
 import java.util.ArrayList;
 import java.util.Random;
-
+import excepciones.GeneroInvalidoException;
+import excepciones.NombreVacioException;
 import superclases.EntidadConNombre;
 import superclases.Objeto;
 
@@ -28,11 +29,13 @@ public class Tablero extends EntidadConNombre {
 	 * 
 	 * @param nombreJugador nombre del jugador/a que jugará la partida
 	 * @param generoJugador género del jugador/a. Solo puede ser 'm' o 'f'
+	 * @throws GeneroInvalidoException 
+	 * @throws NombreVacioException 
 	 */
-	public Tablero(String nombreJugador, char generoJugador) {
+	public Tablero(String nombreJugador, char generoJugador) throws GeneroInvalidoException, NombreVacioException {
 		// Se crea el tablero con un nombre
-		super("Tierra de cermuzos");
-		Random r = new Random();
+			super("Tierra de cermuzos");
+			Random r = new Random();
 
 		// Se crean e inicializan todos los lugares que habrá jugables en el tablero
 		this.lugares = new Lugar[4][4];
@@ -121,9 +124,13 @@ public class Tablero extends EntidadConNombre {
 			byte proteccionAleatoria = (byte) r.nextInt(proteccionEnemigos.size());
 			byte nombreAleatorio = (byte) r.nextInt(nombresEnemigos.size());
 
-			enemigosMundo.add(new Enemigo(nombresEnemigos.get(nombreAleatorio), (r.nextBoolean() ? 'm' : 'f'),
-					(byte) r.nextInt(26), (byte) r.nextInt(100), armasEnemigos.get(armaAleatoria),
-					proteccionEnemigos.get(proteccionAleatoria), false));
+			try {
+				enemigosMundo.add(new Enemigo(nombresEnemigos.get(nombreAleatorio), (r.nextBoolean() ? 'm' : 'f'),
+						(byte) r.nextInt(26), (byte) r.nextInt(100), armasEnemigos.get(armaAleatoria),
+						proteccionEnemigos.get(proteccionAleatoria), false));
+			} catch (GeneroInvalidoException e) {
+				//Esto nunca va a pasar porque lo hemos programado nosotros y es un random entre m y f
+			}
 			proteccionEnemigos.remove(proteccionAleatoria);
 			armasEnemigos.remove(armaAleatoria);
 			nombresEnemigos.remove(nombreAleatorio);
@@ -135,8 +142,13 @@ public class Tablero extends EntidadConNombre {
 		Proteccion defensaBoss = new Proteccion("Olor corporal irrespirable", (byte) 30, (byte) (15 + r.nextInt(25)));
 
 		// Se añade el enemigo final al mundo
-		enemigosMundo.add(new Enemigo("El primo loco de Voldemort", 'm', (byte) r.nextInt(((25 - 5) + 5)), (byte) 100,
-				armaBoss, defensaBoss, true));
+		try {
+			enemigosMundo.add(new Enemigo("El primo loco de Voldemort", 'm', (byte) r.nextInt(((25 - 5) + 5)), (byte) 100,
+					armaBoss, defensaBoss, true));
+		} catch (GeneroInvalidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// Se crean las pociones que apareceran sueltas por el mundo y se meten en un
 		// array

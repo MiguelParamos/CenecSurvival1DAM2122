@@ -1,5 +1,6 @@
 package clases;
 
+import excepciones.NombreVacioException;
 import superclases.EntidadConMonedas;
 
 /**
@@ -29,8 +30,9 @@ public class Lugar extends EntidadConMonedas {
 	 * @param enemigo     enemigos del lugar
 	 * @param tienda      tiendas que hay en el lugar
 	 * @param descripcion peque�a descripcion del lugar
+	 * @throws NombreVacioException 
 	 */
-	public Lugar(String nombre, byte dinero, Pocion pocion, Enemigo enemigo, Tienda tienda, String descripcion) {
+	public Lugar(String nombre, byte dinero, Pocion pocion, Enemigo enemigo, Tienda tienda, String descripcion) throws NombreVacioException {
 		super(nombre, dinero);
 		this.pocion = pocion;
 		this.enemigo = enemigo;
@@ -44,8 +46,9 @@ public class Lugar extends EntidadConMonedas {
 	 * 
 	 * @param nombre      nombre del lugar
 	 * @param descripcion descripción del lugar
+	 * @throws NombreVacioException 
 	 */
-	public Lugar(String nombre, String descripcion) {
+	public Lugar(String nombre, String descripcion) throws NombreVacioException {
 		super(nombre, (byte) 0);
 		this.pocion = null;
 		this.enemigo = null;

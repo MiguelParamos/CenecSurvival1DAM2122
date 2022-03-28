@@ -1,5 +1,6 @@
 package superclases;
 
+import excepciones.NombreVacioException;
 import superclases.EntidadConMonedas;
 
 /**
@@ -14,9 +15,10 @@ public abstract class Objeto extends EntidadConMonedas {
 	 * Representa un objeto extiende de EntidadConMonedas
 	 * 
 	 * @param nombre nombre del objeto
+	 * @throws NombreVacioException 
 	 * @dinero dinero que cuesta el objeto
 	 */
-	public Objeto(String nombre, byte dinero) {
+	public Objeto(String nombre, byte dinero) throws NombreVacioException {
 		super(nombre, dinero);
 	}
 

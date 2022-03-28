@@ -1,5 +1,10 @@
 package clases;
 
+import java.util.Random;
+
+import excepciones.GeneroInvalidoException;
+import excepciones.NombreVacioException;
+import interfaces.AccionesPersonaje;
 import superclases.EntidadConMonedas;
 
 /**
@@ -8,7 +13,7 @@ import superclases.EntidadConMonedas;
  * 
  * @author Cristian Cocargeanu
  */
-public class Personaje extends EntidadConMonedas {
+public class Personaje extends EntidadConMonedas implements AccionesPersonaje {
 	/**
 	 * Representa los puntos de vida del personaje
 	 */
@@ -38,12 +43,14 @@ public class Personaje extends EntidadConMonedas {
 	 * @param vida       cantidad inicial de vida del personaje
 	 * @param arma       arma inicial del personaje
 	 * @param proteccion protección inicial del personaje
+	 * @throws GeneroInvalidoException 
+	 * @throws NombreVacioException 
 	 */
-	public Personaje(String nombre, char genero, byte dinero, short vida, Arma arma, Proteccion proteccion) {
+	public Personaje(String nombre, char genero, byte dinero, short vida, Arma arma, Proteccion proteccion) throws GeneroInvalidoException, NombreVacioException {
 		super(nombre, dinero);
 		this.vida = vida;
 		this.arma = arma;
-		this.genero = genero;
+		this.setGenero(genero);
 		this.proteccion = proteccion;
 	}
 
@@ -62,11 +69,15 @@ public class Personaje extends EntidadConMonedas {
 	 * 
 	 * @param genero nuevo genero del personaje. Solo puede ser 'm' (masculino) o
 	 *               'f' (femenino)
+	 * @throws GeneroInvalidoException 
 	 */
-	public void setGenero(char genero) {
-		this.genero = genero;
+	public void setGenero(char genero) throws GeneroInvalidoException {
+		if (genero == 'm' || genero == 'f') {
+			this.genero = genero;
+		}else {
+			throw new GeneroInvalidoException("El genero "+genero+" no es válido, debió ser m o f");
+		}
 	}
-
 
 	/**
 	 * devuelve el arma actual del personaje
@@ -113,6 +124,15 @@ public class Personaje extends EntidadConMonedas {
 	public String toString() {
 		return this.getNombre() + " " + (genero == 'm' ? "(hombre)" : "(mujer)") + "\n\t" + "Vida: " + this.vida
 				+ "\n\t" + "Dinero: " + this.getDinero() + "\n\t" + this.arma + "\n\t" + this.proteccion + "\n";
+	}
+
+	public boolean estaVivo() {
+		return this.vida > 0;
+	}
+
+	public byte atacar() {
+		Random r = new Random();
+		return (byte) r.nextInt(this.arma.getPuntosAtaque() + 1);
 	}
 
 }
